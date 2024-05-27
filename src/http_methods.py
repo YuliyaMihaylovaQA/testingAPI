@@ -32,7 +32,8 @@ class MyRequests:
                 method=method,
                 url=base_url,
                 headers=headers,
-                cookies=cookies
+                cookies=cookies,
+                data=data
                 )
             return response
         except Exception as e:

@@ -21,7 +21,7 @@ def get_logger(name: str):
     logger = logging.getLogger(name)
     logger.setLevel(logging.DEBUG)
     formatter = logging.Formatter(
-        fmt="%(levelname)s | %(pastime)s | %(message) | file: %(name)s",
+        fmt="%(levelname)s | %(asktime)s | %(message) | file: %(name)s",
         datefmt="%Y-%m-%d-%H:%M:%S"
     )
 

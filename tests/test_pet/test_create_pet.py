@@ -4,12 +4,16 @@ from src.assertions import Assertions
 from src.http_methods import MyRequests
 from http import HTTPStatus
 
+from src.schemas.create_pet_schema import CreatePetSchema
+from src.validator import Validator
+
 
 @allure.epic("Testing create pet")
 class TestCreatePet:
     request = MyRequests()
     url = get_pet_endpoints()
     assertions = Assertions()
+    validator = Validator()
 
     def test_create_pet(self, get_test_name):
         data = """{
@@ -36,4 +40,5 @@ class TestCreatePet:
             actual_status_code=HTTPStatus.CREATED,
             test_name=get_test_name
         )
+        self.validator.validate_response(response=response, model=CreatePetSchema.create_pet)
         print(response.status_code)
