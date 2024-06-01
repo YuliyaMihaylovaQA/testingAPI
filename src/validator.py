@@ -2,6 +2,7 @@ from pydantic import ValidationError
 from requests import Response
 from src.logger import get_logger
 
+
 class Validator:
     logger = get_logger(__name__)
 
@@ -13,3 +14,4 @@ class Validator:
                 return model(**response.json())
         except ValidationError as e:
             Validator.logger.error(e)
+            raise e

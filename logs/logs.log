@@ -1,0 +1,12 @@
+ERROR | 2024-05-27-15:12:38 | Expected 200 but got 400 | file: tests/test_pet/test_create_pet.py::TestCreatePet::test_create_pet (setup)
+ERROR | 2024-05-28-13:18:31 | Expected 200 but got 201 | file: tests/test_pet/test_create_pet.py::TestCreatePet::test_create_pet (setup)
+ERROR | 2024-05-28-22:57:13 | Expected 200 but got 201 | file: tests/test_pet/test_create_pet.py::TestCreatePet::test_create_pet (setup)
+ERROR | 2024-05-28-22:58:54 | Invalid status: available1 | file: src.schemas.create_pet_schema
+ERROR | 2024-05-28-22:58:54 | 1 validation error for CreatePetSchema
+status
+  Value error, Invalid status: available1. Status must be ['available', 'pending', 'sold'] [type=value_error, input_value='available1', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.4/v/value_error | file: src.validator
+ERROR | 2024-05-28-23:02:04 | 1 validation error for CreatePetSchema
+status
+  Value error, Invalid status: available3. Status must be ['available', 'pending', 'sold'] [type=value_error, input_value='available3', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.4/v/value_error | file: src.validator
