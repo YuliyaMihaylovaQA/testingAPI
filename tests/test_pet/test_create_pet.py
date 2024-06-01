@@ -23,10 +23,10 @@ class TestCreatePet:
         info = next(self.pet_generator.generate_pet(tags_count=2))
         data = self.pet_data.prepare_pet_json(info)
         response = self.request.post(url=self.url.create_pet, data=data)
-        # self.assertions.assert_status_code(
-        #     response=response,
-        #     actual_status_code=HTTPStatus.OK,
-        #     test_name=get_test_name
-        # )
-        # self.validator.validate_response(response=response, model=CreatePetSchemas.create_pet)
+        self.assertions.assert_status_code(
+             response=response,
+             actual_status_code=HTTPStatus.OK,
+             test_name=get_test_name
+         )
+        self.validator.validate_response(response=response, model=CreatePetSchemas.create_pet)
         print(response.text)
