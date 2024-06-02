@@ -18,6 +18,7 @@ class TestCreatePet:
     pet_data = PrepareData()
     pet_generator = PetGenerator()
 
+    @allure.title("create pet")
     def test_create_pet(self, get_test_name):
         # data = self.pet_data.get_pet_json()
         info = next(self.pet_generator.generate_pet(tags_count=2))
